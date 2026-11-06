@@ -1,0 +1,12 @@
+{
+  "workbench.colorCustomizations": {
+    "commandCenter.background": "#141413",
+    "commandCenter.foreground": "#D97757",
+    "commandCenter.activeBackground": "#262624",
+    "commandCenter.activeForeground": "#D97757",
+    "commandCenter.border": "#80808073",
+    "commandCenter.activeBorder": "#D97757",
+    "commandCenter.inactiveForeground": "#808080",
+    "commandCenter.inactiveBorder": "#262624"
+  }
+}
