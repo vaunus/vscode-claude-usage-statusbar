@@ -7,7 +7,7 @@ MOD_DIR="$HOME/.claude/mods/usage-statusbar"
 SETTINGS="$HOME/.claude/settings.json"
 
 if command -v code >/dev/null; then
-  code --uninstall-extension local.claude-usage-statusbar || true
+  NODE_NO_WARNINGS=1 code --uninstall-extension local.claude-usage-statusbar || true
 fi
 
 echo "Removing the Claude Code mod"

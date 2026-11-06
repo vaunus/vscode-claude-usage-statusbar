@@ -11,8 +11,10 @@ const WINDOWS = [
   { key: 'seven_day', label: '7d', title: 'Week' },
 ]
 
+// Each dot is one eighth (12.5%). A dot lights as soon as usage passes into its
+// eighth, so 1% shows 1 dot and 13% shows 2.
 function bar(percent) {
-  const level = Math.min(STEPS, Math.max(0, Math.round((percent / 100) * STEPS)))
+  const level = Math.min(STEPS, Math.max(0, Math.ceil((percent * STEPS) / 100)))
   return `$(claude-usage-${level})`
 }
 

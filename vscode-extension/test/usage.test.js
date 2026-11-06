@@ -4,11 +4,14 @@ const { bar, parseUsage, usageView } = require('../usage')
 
 const NOW = 1793970000
 
-test('bar lights one dot per eighth and stays in range', () => {
+test('bar lights a dot as soon as usage passes into its eighth and stays in range', () => {
   assert.equal(bar(0), '$(claude-usage-0)')
+  assert.equal(bar(1), '$(claude-usage-1)')
   assert.equal(bar(12.5), '$(claude-usage-1)')
+  assert.equal(bar(13), '$(claude-usage-2)')
   assert.equal(bar(50), '$(claude-usage-4)')
   assert.equal(bar(87.5), '$(claude-usage-7)')
+  assert.equal(bar(88), '$(claude-usage-8)')
   assert.equal(bar(100), '$(claude-usage-8)')
   assert.equal(bar(140), '$(claude-usage-8)')
   assert.equal(bar(-5), '$(claude-usage-0)')
@@ -44,7 +47,7 @@ test('usageView shows an empty window once the reset time passes', () => {
     NOW,
   )
 
-  assert.equal(view.text, '5h $(claude-usage-0) 0% · 7d $(claude-usage-3) 40%')
+  assert.equal(view.text, '5h $(claude-usage-0) 0% · 7d $(claude-usage-4) 40%')
   assert.match(view.tooltip, /^Session: 0% used\n\n---\n\nWeek: 40% used {2}\nResets: .+$/)
 })
 

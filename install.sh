@@ -22,7 +22,8 @@ echo "Building and installing the VS Code extension"
 BUILD="$(mktemp -d)"
 trap 'rm -rf "$BUILD"' EXIT
 (cd "$ROOT/vscode-extension" && npm run --silent package -- --out "$BUILD/claude-usage-statusbar.vsix" >/dev/null)
-code --install-extension "$BUILD/claude-usage-statusbar.vsix"
+# The VS Code CLI prints a Node deprecation warning (DEP0169) that is not ours.
+NODE_NO_WARNINGS=1 code --install-extension "$BUILD/claude-usage-statusbar.vsix"
 
 cat <<'EOF'
 
