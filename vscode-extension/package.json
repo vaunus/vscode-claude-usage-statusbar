@@ -1,0 +1,48 @@
+{
+  "name": "claude-usage-statusbar",
+  "displayName": "Claude Usage Status Bar",
+  "description": "Shows Claude plan usage in the status bar.",
+  "version": "1.0.0",
+  "publisher": "local",
+  "private": true,
+  "license": "UNLICENSED",
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "colors": [
+      {
+        "id": "claudeUsageStatusbar.foreground",
+        "description": "Color of the Claude usage bars in the status bar.",
+        "defaults": {
+          "dark": "#D97757",
+          "light": "#C15F3C",
+          "highContrast": "#D97757",
+          "highContrastLight": "#C15F3C"
+        }
+      }
+    ],
+    "icons": {
+      "claude-usage-0": { "description": "Claude usage, 0 of 8 dots", "default": { "fontPath": "./media/usage-dots.woff", "fontCharacter": "\\E000" } },
+      "claude-usage-1": { "description": "Claude usage, 1 of 8 dots", "default": { "fontPath": "./media/usage-dots.woff", "fontCharacter": "\\E001" } },
+      "claude-usage-2": { "description": "Claude usage, 2 of 8 dots", "default": { "fontPath": "./media/usage-dots.woff", "fontCharacter": "\\E002" } },
+      "claude-usage-3": { "description": "Claude usage, 3 of 8 dots", "default": { "fontPath": "./media/usage-dots.woff", "fontCharacter": "\\E003" } },
+      "claude-usage-4": { "description": "Claude usage, 4 of 8 dots", "default": { "fontPath": "./media/usage-dots.woff", "fontCharacter": "\\E004" } },
+      "claude-usage-5": { "description": "Claude usage, 5 of 8 dots", "default": { "fontPath": "./media/usage-dots.woff", "fontCharacter": "\\E005" } },
+      "claude-usage-6": { "description": "Claude usage, 6 of 8 dots", "default": { "fontPath": "./media/usage-dots.woff", "fontCharacter": "\\E006" } },
+      "claude-usage-7": { "description": "Claude usage, 7 of 8 dots", "default": { "fontPath": "./media/usage-dots.woff", "fontCharacter": "\\E007" } },
+      "claude-usage-8": { "description": "Claude usage, 8 of 8 dots", "default": { "fontPath": "./media/usage-dots.woff", "fontCharacter": "\\E008" } }
+    }
+  },
+  "scripts": {
+    "test": "node --test",
+    "package": "npx --yes @vscode/vsce package --allow-missing-repository --skip-license"
+  }
+}

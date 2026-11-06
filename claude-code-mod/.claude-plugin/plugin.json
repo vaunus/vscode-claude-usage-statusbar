@@ -1,0 +1,5 @@
+{
+  "name": "usage-statusbar",
+  "version": "1.0.0",
+  "description": "Saves Claude plan usage to ~/.claude/usage-now.json after each turn, for the Claude Usage Status Bar VS Code extension."
+}
